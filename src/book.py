@@ -90,9 +90,11 @@ class Book:
             top_order = queue[0]
             while queue and order.quantity > 0 and compare(order.price, top_order.price):
                 if order.quantity >= top_order.quantity:
-                    trades.append((top_order.quantity, top_order.price))
-                    order.quantity -= top_order.quantity
-                    top_order.quantity = 0
+                    # Ignore deleted orders.
+                    if top_order.quantity > 0:
+                        trades.append((top_order.quantity, top_order.price))
+                        order.quantity -= top_order.quantity
+                        top_order.quantity = 0
                     heapq.heappop(queue)
                     if queue:
                         top_order = queue[0]
@@ -133,9 +135,11 @@ class Book:
             top_order = queue[0]
             while queue and order.quantity > 0:
                 if order.quantity >= top_order.quantity:
-                    trades.append((top_order.quantity, top_order.price))
-                    order.quantity -= top_order.quantity
-                    top_order.quantity = 0
+                    # Ignore deleted orders.
+                    if top_order.quantity > 0:
+                        trades.append((top_order.quantity, top_order.price))
+                        order.quantity -= top_order.quantity
+                        top_order.quantity = 0
                     heapq.heappop(queue)
                     if queue:
                         top_order = queue[0]
