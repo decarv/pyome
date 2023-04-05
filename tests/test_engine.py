@@ -8,5 +8,3 @@ parse_tests = [
     "market buy 150",
     "makret buy 150"
 ]
-
-engine.parse_order(parse_tests[3])
