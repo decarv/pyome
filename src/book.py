@@ -252,7 +252,7 @@ class Book:
             at_idx = row.find("@")
             fine_offset = 2
             l_offset = col_width//2 - at_idx + const_offset - fine_offset
-            r_offset = - const_offset + col_width//2 - (len(row) - at_idx - 1) + fine_offset
+            r_offset = col_width//2 - (len(row) - at_idx - 1) + fine_offset
             buy_column.append(" " * l_offset + row + " " * r_offset)
 
         # Build sell orders column.
