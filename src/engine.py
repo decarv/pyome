@@ -136,6 +136,9 @@ class MatchingEngine:
                 )
                 self.orders_map[order_id] = order
 
+                # A market order has no reason to exist after executed.
+                book.delete_order(order)
+
                 if not trades:
                     return self.NO_LIQUIDITY_MESSAGE
 
