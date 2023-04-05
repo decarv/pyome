@@ -41,13 +41,13 @@ class MatchingEngine:
     HELP_MESSAGE = (
         "\n"
         "Commands:\n"
-        "      limit <buy|sell> <price> <quantity>     places a limit order\n"
-        "      market <buy|sell> <quantity>            places a market order\n"
-        "      cancel order <id>                       cancels an order\n"
-        "      change order <id> <price> <quantity>    changes an order\n"
-        "      print book                              prints the book of orders\n"
-        "      help                                    displays this message\n"
-        "      exit                                    exits engine\n"
+        "      limit <buy|sell:str> <price:float> <quantity:int>     places a limit order\n"
+        "      market <buy|sell:str> <quantity:int>                  places a market order\n"
+        "      cancel order <id:int>                                 cancels an order\n"
+        "      change order <id:int> <price:float> <quantity:int>    changes an order\n"
+        "      print book                                            prints the book of orders\n"
+        "      help                                                  displays this message\n"
+        "      exit                                                  exits engine\n"
     )
     EXIT_MESSAGE = "Exiting PyOME."
 
