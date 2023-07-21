@@ -211,6 +211,12 @@ class MatchingEngine:
                 self.loop = False
                 return self.EXIT_MESSAGE
 
+            case [op_a, op_b] if op_a == "list" and op_b == "orders":
+                output = []
+                for k, v in self.orders_map.items():
+                    print(v)
+                return "\n".join(output)
+
             case [op_a] if op_a == "help":
                 return self.HELP_MESSAGE
 
